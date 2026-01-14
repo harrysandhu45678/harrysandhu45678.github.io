@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <title>Harry Sandhu | Power • Precision • Purpose</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; font-family:"Inter", sans-serif; }
+
+    body {
+      background:transparent;
+      color:#e5e7eb;
+      overflow-x:hidden;
+    }
+    #bg-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2;
+}
+
+.video-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.65);
+  z-index: -1;
+}
+
+    canvas {
+      position:fixed;
+      top:0;
+      left:0;
+      width:100%;
+      height:100%;
+      z-index:0;
+      pointer-events:none;
+    }
+
+    section {
+  min-height: 100vh;
+  padding: 110px 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+}
+
+    .hero { text-align:center; }
+
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: 600;
+      letter-spacing: 4px;
+      margin-bottom: 14px;
+      color:#f8fafc;
+      text-shadow:0 0 10px rgba(56,189,248,0.5);
+    }
+
+    .hero h2 {
+  font-size: 1.05rem;
+  font-weight: 400;
+  letter-spacing: 1.5px;
+  color: #cbd5f5;
+  margin-bottom: 18px;
+  min-height: 28px;
+}
+
+    .hero p { font-size:0.95rem; opacity:0.85; }
+
+   .section-title {
+  font-size: 1.6rem;
+  font-weight: 500;
+  letter-spacing: 2px;
+  margin-bottom: 22px;
+  color: #e2e8f0;
+}
+
+    .about, .destiny, .focus-text {
+  font-size: 0.95rem;
+  line-height: 1.9;
+  letter-spacing: 0.3px;
+  color: #e2e8f0;
+}
+
+    .cards {
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(140px,1fr));
+      gap:15px;
+      margin-top:20px;
+    }
+
+    .card {
+      background:rgba(255,255,255,0.05);
+      border-radius:12px;
+      padding:15px;
+      border:1px solid rgba(255,255,255,0.08);
+      animation:pulseGlow 4s infinite alternate;
+    }
+
+    @keyframes pulseGlow {
+      from { box-shadow:0 0 5px rgba(56,189,248,0.1); }
+      to { box-shadow:0 0 15px rgba(56,189,248,0.35); }
+    }
+
+    .card h3 { font-size:1rem; margin-bottom:8px; color:#f1f5f9; }
+    .card h3 i { color:#38bdf8; margin-right:6px; }
+    .card p { font-size:0.85rem; opacity:0.85; }
+
+    .closing {
+      text-align:center;
+      font-size:1.2rem;
+      letter-spacing:1px;
+      opacity:0.9;
+    }
+
+    .easter-egg {
+      position:absolute;
+      bottom:10px;
+      right:10px;
+      font-size:0.6rem;
+      opacity:0.2;
+    }
+
+    .reveal {
+      opacity:0;
+      transform:translateY(40px);
+      transition:all 1s ease;
+    }
+
+    .reveal.active {
+      opacity:1;
+      transform:translateY(0);
+    }
+    .hero p em {
+  letter-spacing: 1.2px;
+  font-style: normal;
+  color: #94a3b8;
+}
+
+.closing {
+  font-weight: 500;
+  letter-spacing: 2px;
+  color: #e5e7eb;
+}
+  </style>
+</head>
+<body>
+  
+  <video autoplay muted loop playsinline id="bg-video">
+  <source src="videos/bg.mp4" type="video/mp4">
+</video>
+<div class="video-overlay"></div>
+
+<section class="hero reveal">
+  <h1>HARRY SANDHU</h1>
+  <h2 id="typing"></h2>
+  <p>Medicine • Design • Technology • Vision</p>
+  <br>
+  <p><em>I was not born to follow paths. I was born to create them.</em></p>
+</section>
+
+<section class="reveal">
+  <h2 class="section-title">About Me</h2>
+  <div class="about">
+    Disciplined by nature and shaped by struggle, I carry the mindset of a builder — not a follower.
+    My journey moves through medicine, design, and technology because I refuse to live small.
+    I believe in precision, long-term vision, and silent domination.
+    I am not here to impress. I am here to rise.
+  </div>
+</section>
+
+<section class="reveal">
+  <h2 class="section-title">Origin</h2>
+  <div class="about">
+    I was not shaped by comfort. I was shaped by pressure.<br>
+    From discipline, I learned control. From struggle, I learned endurance.<br>
+    I do not seek shortcuts. I build foundations.<br>
+    I am here to construct something that lasts.
+  </div>
+</section>
+
+<section class="reveal">
+  <h2 class="section-title">Discipline</h2>
+  <div class="about">
+    Discipline is not restriction. It is freedom.<br>
+    It gives me control when others collapse.<br>
+    It keeps me focused when others get distracted.<br>
+    I trust discipline more than motivation.
+  </div>
+</section>
+
+<section class="reveal">
+  <h2 class="section-title">Pressure</h2>
+  <div class="about">
+    Pressure does not break me. It reveals me.<br>
+    I am calm where others panic.<br>
+    Focused where others freeze.<br>
+    Controlled where others lose direction.
+  </div>
+</section>
+
+<section class="reveal">
+  <h2 class="section-title">Mindset</h2>
+  <div class="about">
+    I do not move with noise. I move with intention.<br>
+    While others chase moments, I build systems.<br>
+    I am not interested in trends. I am interested in legacy.
+  </div>
+</section>
+
+<section class="reveal">
+  <h2 class="section-title">Vision</h2>
+  <div class="about">
+    My vision is not local. It is global.<br>
+    I think beyond borders, beyond limits, beyond expectations.<br>
+    I am building for a future most people cannot see yet.
+  </div>
+</section>
+
+<section class="reveal">
+  <h2 class="section-title">Silence</h2>
+  <div class="about">
+    I am not loud because I am not unsure.<br>
+    I do not announce. I arrive.<br>
+    Silence is my strategy. Presence is my impact.
+  </div>
+</section>
+
+<section class="reveal">
+  <h2 class="section-title">Control</h2>
+  <div class="about">
+    I control my emotions.<br>
+    I control my focus.<br>
+    I control my direction.<br>
+    Because the one who controls himself, controls outcomes.
+  </div>
+</section>
+
+<section class="reveal">
+  <h2 class="section-title">Legacy</h2>
+  <div class="about">
+    I am not building for applause.<br>
+    I am building for permanence.<br>
+    When the noise fades, what remains will be structure.<br>
+    That is legacy.
+  </div>
+</section>
+
+<section class="reveal">
+  <h2 class="section-title">What I Do</h2>
+  <div class="cards">
+    <div class="card">
+      <h3><i class="fa-solid fa-user-doctor"></i> Medical & Healthcare</h3>
+      <p>Operation Theatre & Anesthesia Technology background. Trained for precision under pressure.</p>
+    </div>
+    <div class="card">
+      <h3><i class="fa-solid fa-palette"></i> Design & Branding</h3>
+      <p>Visual identity, product design, and brand presence across digital platforms.</p>
+    </div>
+    <div class="card">
+      <h3><i class="fa-solid fa-code"></i> Web & Technology</h3>
+      <p>Building with code, UI structure, and digital systems.</p>
+    </div>
+    <div class="card">
+      <h3><i class="fa-solid fa-chess-king"></i> Strategy & Vision</h3>
+      <p>I think in systems, not moments. I plan in decades, not days.</p>
+    </div>
+  </div>
+</section>
+
+<section class="reveal">
+  <h2 class="section-title">Focus</h2>
+  <div class="focus-text">While others look around, I look ahead.</div>
+</section>
+
+<section class="reveal">
+  <h2 class="section-title">Why I Think Beyond Borders</h2>
+  <div class="destiny">
+    I am driven by a deep urge to rise beyond limitations, geography, and expectation.
+    Foreign lands, global vision, and building something larger than myself pull me forward.
+    I do not fear struggle. I use it.
+  </div>
+</section>
+
+<section class="reveal">
+  <div class="closing">I am not in competition. I am in construction.</div>
+  <div class="easter-egg">Those who see, know.</div>
+</section>
+
+<script>
+  // Typing effect
+  const text = "A Rising Power from Struggle and a Nation of Discipline";
+  let index = 0;
+  function typeEffect() {
+    if (index < text.length) {
+      document.getElementById("typing").innerHTML += text.charAt(index);
+      index++;
+      setTimeout(typeEffect, 85);
+    }
+  }
+  typeEffect();
+
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  function revealOnScroll() {
+    reveals.forEach(section => {
+      const windowHeight = window.innerHeight;
+      const revealTop = section.getBoundingClientRect().top;
+      if (revealTop < windowHeight - 100) {
+        section.classList.add('active');
+      }
+    });
+  }
+  window.addEventListener('scroll', revealOnScroll);
+  revealOnScroll();
+
+</script>
+
+</body>
+</html>
